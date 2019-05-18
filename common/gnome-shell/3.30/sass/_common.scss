@@ -144,7 +144,7 @@ StScrollBar {
   -barlevel-active-background-color: $selected_bg_color;        //active trough fill
   -barlevel-active-border-color: transparentize(black, 1);      //active trough border
   -barlevel-overdrive-color: $destructive_color;
-  -barlevel-overdrive-border-color: transparentize(black, 1); 
+  -barlevel-overdrive-border-color: transparentize(black, 1);
   -barlevel-overdrive-separator-width: 1px;
   -barlevel-border-width: 0;
   -slider-handle-radius: 0px;
@@ -215,11 +215,11 @@ StScrollBar {
 .flashspot { background-color: white; }
 
 .modal-dialog {
+  border-radius: 3px;
   color: $fg_color;
-  background-color: transparentize($bg_color, 1);
-  border: none;
-  border-image: url("#{$asset_path}/misc/modal.svg") 9 9 9 67;
-  padding: 0 5px 6px 5px;
+  background-color: $modal_bg_color;
+  border: 1px solid $modal_borders_color;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
 
   .modal-dialog-content-box {
     padding: 20px 10px 10px 10px;
@@ -619,13 +619,14 @@ StScrollBar {
 .popup-menu {
   min-width: 15em;
   color: $fg_color;
-  border-image: url("#{$asset_path}/menu/menu.svg") 9 9 9 9;
+  background-color: $panelmenu_bg_color;
+  border-radius: 3px;
 
   .popup-menu-arrow { } //defined globally in the TOP BAR
   .popup-sub-menu {
     background: if($variant=='light', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
     box-shadow: inset 0 -1px if($variant=='light', rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
-    margin: 0 4px;
+    margin: 0;
 
     .popup-menu-item.selected {
       background-color: $selected_bg_color;
@@ -638,20 +639,19 @@ StScrollBar {
   .popup-menu-item {
     spacing: 12px;
 
-    &:ltr { padding: .4em 3em .4em 0em; }
-    &:rtl { padding: .4em 0em .4em 3em; }
+    &:ltr { padding: .4em 2em .4em 0em; }
+    &:rtl { padding: .4em 0em .4em 2em; }
 
     &:checked {
       font-weight: normal;
-      background: none;
-      box-shadow: none;
-      border-image: url("#{$asset_path}/menu/submenu-open.svg") 9 9 9 9;
+      background: if($variant=='light', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+      box-shadow: inset 0 1px if($variant=='light', rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
     }
 
     &:active, &.selected {
       color: $selected_fg_color;
-      background-color: transparent;
-      border-image: url("common-assets/menu/menu-hover.svg") 9 9 1 1;
+      background-color: $selected_bg_color;
+      box-shadow: none;
     }
 
     &:insensitive {
@@ -667,7 +667,7 @@ StScrollBar {
   }
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
   &.panel-menu {
-    -boxpointer-gap: 0px;
+    -boxpointer-gap: 4px;
     margin-bottom: 1.75em;
   }
 }
@@ -679,12 +679,13 @@ StScrollBar {
 }
 
 .popup-menu-boxpointer {
-  -arrow-border-radius: 2px;
-  -arrow-background-color:  rgba(0,0,0,0.0);
+  -arrow-border-radius: 3px;
+  -arrow-background-color: $panelmenu_bg_color;
   -arrow-border-width: 1px;
-  -arrow-border-color: rgba(0,0,0,0.0);
-  -arrow-base: 0;
+  -arrow-border-color: $panelmenu_borders_color;
+  -arrow-base: 26px;
   -arrow-rise: 0;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 .candidate-popup-boxpointer {
@@ -726,10 +727,10 @@ StScrollBar {
   min-height: 64px;
 
   color: $_shell_fg_color;
-  background: none;
-  border: none;
+  background: $popup_bg_color;
+  border: 1px solid $popup_borders_color;
   border-radius: 5px;
-  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
 
 .osd-monitor-label { @include fontsize($font-size * 3); }
 
@@ -746,10 +747,10 @@ StScrollBar {
 
 .resize-popup {
   color: $osd_fg_color;
-  background: none;
-  border: none;
+  background: $popup_bg_color;
+  border: 1px solid $popup_borders_color;
   border-radius: 5px;
-	border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+	box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
   padding: 12px;
 }
 
@@ -762,10 +763,10 @@ StScrollBar {
 }
 
 .switcher-list {
-  background: none;
-  border: none;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  background: $switcher_bg_color;
+  border: 1px solid $switcher_borders_color;
   border-radius: 3px;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
   padding: 20px;
 
   &-item-container { spacing: 8px; }
@@ -837,8 +838,10 @@ StScrollBar {
   &-group { padding: 12px; }
 
   &-container {
-    border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+    background-color: $switcher_bg_color;
+    border: 1px solid $switcher_borders_color;
     border-radius: 3px;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
     padding: 20px;
     padding-bottom: 24px;
   }
@@ -1009,7 +1012,6 @@ StScrollBar {
   .screencast-indicator { color: $error_color; }
 
   .clock-display > * > *:last-child {
-    color: $selected_fg_color;
     margin-left: .3em;
   }
 
@@ -1283,10 +1285,10 @@ StScrollBar {
 .calendar-week-number {
   @include fontsize($font-size * 0.75);
   font-weight: bold;
-  width: 2.3em; height: 1.8em;
+  width: 2.0em; height: 1.5em;
   border-radius: 2px;
-  padding: 0.5em 0 0;
-  margin: 6px;
+  padding: 0.4em 0 0;
+  margin: 2px 6px;
   background-color: transparentize($fg_color,0.7);
   color: $bg_color;
 }
@@ -1319,17 +1321,17 @@ StScrollBar {
     > StIcon {
       icon-size: 18px;
       border-radius: 0px;
-      color: transparent; 
+      color: transparent;
       background-color: transparent;
       background-image: url('#{$asset_path}/misc/message-close.svg');
     }
     &:hover > StIcon {
-      color: transparent; 
+      color: transparent;
       background-color: transparent;
       background-image: url('#{$asset_path}/misc/message-close-hover.svg');
     }
     &:active > StIcon {
-      color: transparent; 
+      color: transparent;
       background-color: transparent;
       background-image: url('#{$asset_path}/misc/message-close-active.svg');
     }
@@ -1338,24 +1340,28 @@ StScrollBar {
 }
 
 .message {
-  padding: 4px;
+  padding: 0;
   color: $fg_color;
-  border-image: url("#{$asset_path}/misc/message.svg") 9 9 9 9;
+  background-color: if($variant=='light', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+  border: 1px solid if($variant=='light', rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.30));
+  border-radius: 3px;
 
   &:hover, &:focus {
     color: $fg_color;
-    border-image: url("#{$asset_path}/misc/message-hover.svg") 9 9 9 9;
+    border-color: $selected_bg_color;
   }
 
   &:active {
     color: $selected_fg_color;
-    border-image: url("#{$asset_path}/misc/message-active.svg") 9 9 9 9;
+    background-color: $selected_bg_color;
+    border-color: $selected_bg_color;
   }
 
   &-icon-bin {
-    padding: 8px 0px 8px 8px;
+    padding: 12px 0px 12px 12px;
+    border-image: url("common-assets/misc/message-icon.svg") 9 9 9 9;
 
-    &:rtl { padding: 8px 8px 8px 0px; }
+    &:rtl { padding: 12px 12px 12px 0px; }
 
     > StIcon {
       //icon-size: 32px;
@@ -1448,24 +1454,22 @@ StScrollBar {
   background-size: 26px;
   height: 26px;
   width: 26px;
+  border: 0px;
+  box-shadow: none;
+  background-color: transparent;
+  color: transparent;
 
   &:hover {
     background-image: url("common-assets/misc/close-hover.svg");
-    background-size: 26px;
-    height: 26px;
-    width: 26px;
   }
 
   &:active {
     background-image: url("common-assets/misc/close-active.svg");
-    background-size: 26px;
-    height: 26px;
-    width: 26px;
   }
 }
 
 .window-close {
-  -shell-close-overlap: 11px;
+  -shell-close-overlap: 12px;
 }
 
 //
@@ -1665,13 +1669,9 @@ StScrollBar {
 
 .dash-item-container > StWidget {
 
-  &, &:rtl, .right & {
-    margin: 4px 8px;
-    padding: 0; }
+  &, &:rtl, .right & { padding: 4px 8px; }
 
-  .top &, .bottom & {
-    margin: 6px;
-    padding: 0; }
+  .top &, .bottom & { padding: 6px; }
 }
 
 //osd tooltip
@@ -1692,25 +1692,11 @@ StScrollBar {
 // Dash Buttons
 #dash .app-well-app {
 
-  &:hover,
-  .right &:hover,
-  .bottom &:hover,
-  .top &:hover {
-    background-color: $selected_bg_color;
-  }
-
-  &:active,
-  .right &:active,
-  .bottom &:active,
-  .top &:active {
-    background-color: darken($selected_bg_color, 10%);
-  }
-
   &:hover .overview-icon,
   .right &:hover .overview-icon,
   .bottom &:hover .overview-icon,
   .top &:hover .overview-icon {
-    background-color: transparent;
+    background-color: $selected_bg_color;
   }
 
   &:active .overview-icon,
@@ -1718,7 +1704,7 @@ StScrollBar {
   .bottom &:active .overview-icon,
   .top &:active .overview-icon {
     box-shadow: none;
-    background-color: transparent;
+    background-color: darken($selected_bg_color, 10%);
   }
 
   &-running-dot {
@@ -1726,11 +1712,6 @@ StScrollBar {
     height: 2px;
     margin-bottom: 2px;
     background-color: $selected_bg_color;
-  }
-
-  &:hover .app-well-app-running-dot,
-  &:active .app-well-app-running-dot {
-    background-color: #ffffff;
   }
 }
 
@@ -1741,10 +1722,6 @@ StScrollBar {
     height: 4px;
   }
 
-  .app-well-app:hover .app-well-app-running-dot,
-  .app-well-app:active .app-well-app-running-dot {
-    background-color: transparent;
-  }
   // Add missing 1px margin for finer .show-apps-icon alignment
   // via margin property instead to keep 1px smaller .show-apps-icon size
   // like standard #dash styling. Better than 1px transparent border.
@@ -1753,18 +1730,6 @@ StScrollBar {
   @each $var in 1, 2, 3, 4 {
     .running#{$var} .app-well-app-running-dot {
       background-image: url("common-assets/dash/running#{$var}.svg");
-    }
-    .running#{$var}:hover .app-well-app-running-dot {
-      background-image: url("common-assets/dash/running#{$var}-hover.svg");
-    }
-  }
-
-  &.shrink {
-    .dash-item-container > StWidget, .dash-item-container > StWidget:rtl, .right .dash-item-container > StWidget {
-      margin: 0;
-    }
-    .top .dash-item-container > StWidget, .bottom .dash-item-container > StWidget {
-      margin: 0;
     }
   }
 }
@@ -1929,13 +1894,20 @@ StScrollBar {
   .page-indicator-icon {
     width: 18px;
     height: 18px;
+    border: none;
+    background-color: transparent;
     background-image: url(common-assets/misc/page-indicator-inactive.svg);
   }
 
   &:hover .page-indicator-icon { background-image: url(common-assets/misc/page-indicator-hover.svg); }
-  &:active .page-indicator-icon { background-image: url(common-assets/misc/page-indicator-active.svg); }
+  &:active .page-indicator-icon {
+    margin: 0;
+    background-color: transparent;
+    background-image: url(common-assets/misc/page-indicator-active.svg); }
   &:checked .page-indicator-icon,
-  &:checked:active { background-image: url(common-assets/misc/page-indicator-checked.svg); }
+  &:checked:active {
+    background-color: transparent;
+    background-image: url(common-assets/misc/page-indicator-checked.svg); }
 }
 
 .no-frequent-applications-label { @extend %status_text; }
@@ -2001,12 +1973,12 @@ StScrollBar {
 .notification-banner:focus {
   @include fontsize($font-size);
   width: 34em;
-  margin: 5px;
-  padding: 10px;
+  margin: 10px;
+  padding: 6px 4px;
   color: $fg_color;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-image: url("#{$asset_path}/menu/menu.svg") 9 9 9 9;
+  background-color: $panelmenu_bg_color;
+  border: 1px solid $panelmenu_borders_color;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
 
   .notification-icon { padding: 5px; }
 
@@ -2174,7 +2146,7 @@ $legacy_icon_size: 24px;
   &:active, &:checked { @include button(osd-active); }
 
   &:grayed { @include button(osd-insensitive); }
-}                             
+}
 
 .keyboard-subkeys { //long press on a key popup
   color: $osd_fg_color;
@@ -2427,12 +2399,13 @@ $legacy_icon_size: 24px;
 // Looking Glass
 //
 #LookingGlassDialog {
+  margin-top: 4px;
   spacing: 4px;
   padding: 8px 8px 10px 8px;
-  background-color: transparentize(black, 0.3);
-  border: 1px solid black;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  background-color: $switcher_bg_color;
+  border: 1px solid $switcher_borders_color;
   border-radius: 2px;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
   color: $osd_fg_color;
 
   & > #Toolbar {
