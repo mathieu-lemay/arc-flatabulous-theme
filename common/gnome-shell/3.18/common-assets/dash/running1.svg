@@ -23,8 +23,8 @@
    version="1.0"
    style="display:inline;enable-background:new">
   <sodipodi:namedview
-     stroke="#ef2929"
-     fill="#f57900"
+     stroke="#535353"
+     fill="#8b8b8b"
      id="base"
      pagecolor="#ffffff"
      bordercolor="#808080"
@@ -61,9 +61,9 @@
      guidetolerance="10000"
      borderlayer="true"
      showborder="true"
-     guidecolor="#ff0b00"
+     guidecolor="#3e3e3e"
      guideopacity="1"
-     guidehicolor="#001aff"
+     guidehicolor="#252525"
      guidehiopacity="0.49803922"
      inkscape:snap-smooth-nodes="false"
      inkscape:snap-page="true">
@@ -81,7 +81,7 @@
        id="selected_bg_color"
        osb:paint="solid">
       <stop
-         style="stop-color:#5294e2;stop-opacity:1;"
+         style="stop-color:#8c8c8c;stop-opacity:1;"
          offset="0"
          id="stop4137" />
     </linearGradient>

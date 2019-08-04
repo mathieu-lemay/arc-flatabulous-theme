@@ -368,8 +368,8 @@ StScrollBar {
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(255,0,0,0.05);
-      background-gradient-end: rgba(255,0,0,0.2);
+      background-gradient-start: rgba(54, 54, 54,0.05);
+      background-gradient-end: rgba(54, 54, 54,0.2);
     }
     &:ltr { padding-right: 4px; }
     &:rtl { padding-left: 4px; }
@@ -386,8 +386,8 @@ StScrollBar {
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(0,0,255,0.05);
-      background-gradient-end: rgba(0,0,255,0.2);
+      background-gradient-start: rgba(18, 18, 18,0.05);
+      background-gradient-end: rgba(18, 18, 18,0.2);
     }
     &:ltr { padding-left: 4px; spacing: 0px; }
     &:rtl { padding-right: 4px; spacing: 0px; }
@@ -405,8 +405,8 @@ StScrollBar {
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(0,255,0,0.05);
-      background-gradient-end: rgba(0,255,0,0.2);
+      background-gradient-start: rgba(182, 182, 182,0.05);
+      background-gradient-end: rgba(182, 182, 182,0.2);
     }
   }
 }
@@ -1055,7 +1055,7 @@ StScrollBar {
 // Magnifier
 //
 .magnifier-zoom-region {
-  border: 2px solid rgba(128, 0, 0, 1);
+  border: 2px solid rgba(27, 27, 27, 1);
 
   .full-screen { border-width: 0px; }
 }

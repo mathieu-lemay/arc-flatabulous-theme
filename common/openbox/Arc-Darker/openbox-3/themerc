@@ -27,41 +27,41 @@ window.handle.width: 0
 padding.width: 4
 padding.height: 4
 
-window.active.border.color: #2d3036
-window.inactive.border.color: #2d3036
-window.active.title.separator.color: #2f343f
-window.inactive.title.separator.color: #2f343f
-window.active.client.color: #2d3036
-window.inactive.client.color: #2d3036
+window.active.border.color: #303030
+window.inactive.border.color: #303030
+window.active.title.separator.color: #343434
+window.inactive.title.separator.color: #343434
+window.active.client.color: #303030
+window.inactive.client.color: #303030
 
-window.active.label.text.color: #D3DAE3
-window.inactive.label.text.color: #7F8388
+window.active.label.text.color: #d9d9d9
+window.inactive.label.text.color: #838383
 
-window.active.button.unpressed.image.color: #D3DAE3
-window.active.button.pressed.image.color: #5294E2
-window.active.button.disabled.image.color: #2d3036
-window.active.button.hover.image.color: #afb8c5
-window.active.button.toggled.unpressed.image.color: #D3DAE3
-window.active.button.toggled.pressed.image.color: #5294E2
-window.active.button.toggled.hover.image.color: #afb8c5
-window.inactive.button.unpressed.image.color: #1F2328
-window.inactive.button.pressed.image.color: #5294E2
-window.inactive.button.disabled.image.color: #2d3036
-window.inactive.button.hover.image.color: #afb8c5
-window.inactive.button.toggled.unpressed.image.color: #1F2328
-window.inactive.button.toggled.pressed.image.color: #5294E2
-window.inactive.button.toggled.hover.image.color: #afb8c5
+window.active.button.unpressed.image.color: #d9d9d9
+window.active.button.pressed.image.color: #8c8c8c
+window.active.button.disabled.image.color: #303030
+window.active.button.hover.image.color: #b7b7b7
+window.active.button.toggled.unpressed.image.color: #d9d9d9
+window.active.button.toggled.pressed.image.color: #8c8c8c
+window.active.button.toggled.hover.image.color: #b7b7b7
+window.inactive.button.unpressed.image.color: #232323
+window.inactive.button.pressed.image.color: #8c8c8c
+window.inactive.button.disabled.image.color: #303030
+window.inactive.button.hover.image.color: #b7b7b7
+window.inactive.button.toggled.unpressed.image.color: #232323
+window.inactive.button.toggled.pressed.image.color: #8c8c8c
+window.inactive.button.toggled.hover.image.color: #b7b7b7
 
 window.active.title.bg: flat solid
-window.active.title.bg.color: #2f343f
+window.active.title.bg.color: #343434
 window.active.label.bg: flat solid
-window.active.label.bg.color: #2f343f
+window.active.label.bg.color: #343434
 #window.active.handle.bg: texture
 #window.active.grip.bg: texture
 window.inactive.title.bg: flat solid
-window.inactive.title.bg.color: #2f343f
+window.inactive.title.bg.color: #343434
 window.inactive.label.bg: flat solid
-window.inactive.label.bg.color: #2f343f
+window.inactive.label.bg.color: #343434
 #window.inactive.handle.bg: texture
 #window.inactive.grip.bg: texture
 
@@ -94,21 +94,21 @@ menu.separator.padding.height: 2
 menu.overlap.x: 0
 menu.overlap.y: 0
 
-menu.border.color: #aeb0b6
-menu.separator.color: #a8adb5
+menu.border.color: #b0b0b0
+menu.separator.color: #adadad
 
-menu.title.text.color: #D3DAE3
-menu.items.text.color: #2d3036
-menu.items.disabled.text.color: #76797F
+menu.title.text.color: #d9d9d9
+menu.items.text.color: #303030
+menu.items.disabled.text.color: #797979
 menu.items.active.text.color: #ffffff
-menu.items.active.disabled.text.color: #aeb0b6
+menu.items.active.disabled.text.color: #b0b0b0
 
 menu.items.bg: flat solid
-menu.items.bg.color: #f5f6f7
+menu.items.bg.color: #f6f6f6
 menu.items.active.bg: flat solid
-menu.items.active.bg.color: #5294E2
+menu.items.active.bg.color: #8c8c8c
 menu.title.bg: flat solid
-menu.title.bg.color: #2d3036
+menu.title.bg.color: #303030
 
 menu.title.text.justify: center
 
@@ -118,17 +118,17 @@ menu.title.text.justify: center
 ### OSD
 osd.border.width: 1
 
-osd.border.color: #2d3036
+osd.border.color: #303030
 
-osd.label.text.color: #D3DAE3
+osd.label.text.color: #d9d9d9
 
 osd.bg: flat solid
-osd.bg.color: #2f343f
+osd.bg.color: #343434
 osd.label.bg: flat solid
-osd.label.bg.color: #2f343f
+osd.label.bg.color: #343434
 osd.hilight.bg: flat solid
-osd.hilight.bg.color: #5294E2
+osd.hilight.bg.color: #8c8c8c
 osd.unhilight.bg: flat solid
-osd.unhilight.bg.color: #D3DAE3
+osd.unhilight.bg.color: #d9d9d9
 
 #osd.label.text.font: text shadow
